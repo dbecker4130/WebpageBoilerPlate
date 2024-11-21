@@ -48,11 +48,22 @@ export default function BasicTabs() {
           LOGO HERE
         </Box> */}
 
-      <Box sx={{ borderBottom: 1, border: ' 1px solid pink', display: 'flex', justifyContent: 'space-between'}}>
-        <Box sx={{ border: '1px solid orange', width: '25%' }}>
+      <Box sx={{ 
+              borderBottom: 1, 
+              border: ' 1px solid pink', 
+              display: 'flex', 
+              justifyContent: 'space-between',
+              height: '70px'
+            }}
+      >
+        <Box sx={{ border: '1px solid orange'}}>
           LOGO HERE
         </Box>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" sx={{ border: '1px solid green' }}>
+        <Tabs 
+          value={value} 
+          onChange={handleChange}
+          aria-label="basic tabs example"
+          sx={{ border: '1px solid green', width: '40%', height: '20px' }}>
           <Tab label="Item One" {...a11yProps(0)} />
           <Tab label="Item Two" {...a11yProps(1)} />
           <Tab label="Item Three" {...a11yProps(2)} />
