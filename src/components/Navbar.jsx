@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import { border } from '@mui/system';
+import AboutPage from './AboutPage';
+import ContactPage from './ContactPage';
+import WorkPage from './WorkPage';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -16,7 +18,7 @@ function CustomTabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+      {value === index && <Box>{children}</Box>}
     </div>
   );
 }
@@ -43,40 +45,33 @@ export default function BasicTabs() {
 
   return (
     <Box sx={{ width: '100%', border: '1px solid red', height: '100vh' }}>
-
-        {/* <Box sx={{ border: '1px solid orange', width: '25%' }}>
-          LOGO HERE
-        </Box> */}
-
       <Box sx={{ 
-              borderBottom: 1, 
-              border: ' 1px solid pink', 
               display: 'flex', 
               justifyContent: 'space-between',
-              height: '70px'
+              height: '50px'
             }}
       >
-        <Box sx={{ border: '1px solid orange'}}>
-          LOGO HERE
+        <Box>
+          LOGO
         </Box>
         <Tabs 
           value={value} 
           onChange={handleChange}
           aria-label="basic tabs example"
-          sx={{ border: '1px solid green', width: '40%', height: '20px' }}>
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          sx={{ width: '30%', height: '20px' }}>
+          <Tab label="About" {...a11yProps(0)} />
+          <Tab label="Work" {...a11yProps(1)} />
+          <Tab label="Contact" {...a11yProps(2)} />
         </Tabs>
       </Box>
-      <CustomTabPanel value={value} index={0} style={{ border: '1px solid white' }}>
-        Item One
+      <CustomTabPanel value={value} index={0}>
+        <AboutPage></AboutPage>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        Item Two
+        <WorkPage></WorkPage>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        Item Three
+        <ContactPage></ContactPage>
       </CustomTabPanel>
     </Box>
   );
