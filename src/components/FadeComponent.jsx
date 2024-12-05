@@ -34,7 +34,7 @@ const FadeInComponent = ({ text, textColor }) => {
             textAlign: 'center',
             color: textColor,
             letterSpacing: '.01em',
-            fontFamily: 'Vintage, sans-serif',
+            fontFamily: 'Anton SC, sans-serif',
             fontSize: '6.25vw',
             fontWeight: 400,
             lineHeight: '95%'

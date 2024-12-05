@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import AboutPage from './AboutPage';
 import ContactPage from './ContactPage';
 import WorkPage from './WorkPage';
+import { useTheme } from '@mui/material/styles';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -38,26 +39,32 @@ function a11yProps(index) {
 
 export default function BasicTabs() {
   const [value, setValue] = React.useState(0);
+  const theme = useTheme();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   return (
-    <Box sx={{ width: '100%', border: '1px solid red', height: '100vh' }}>
+    <Box sx={{ width: '100%' }}>
       <Box sx={{ 
               display: 'flex', 
               justifyContent: 'space-between',
               height: '50px'
             }}
       >
-        <Box>
-          LOGO
+        <Box className='navbar' sx={{ color: `${theme.palette.primary.main}`, fontFamily: 'Anton CS, sans-serif', fontWeight: '400', fontStyle: 'normal' }}>
+          <h2>Dred <span style={{ color: `${theme.palette.secondary.main}` }}>BMX</span> Shows</h2>
         </Box>
         <Tabs 
           value={value} 
           onChange={handleChange}
           aria-label="basic tabs example"
+          TabIndicatorProps={{
+            style: {
+              backgroundColor: `${theme.palette.secondary.main}`,
+            }
+          }}
           sx={{ width: '30%', height: '20px' }}>
           <Tab label="About" {...a11yProps(0)} />
           <Tab label="Work" {...a11yProps(1)} />
