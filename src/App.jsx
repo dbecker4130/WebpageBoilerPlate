@@ -9,12 +9,26 @@ function App() {
     cssVariables: true,
     palette: {
       primary: {
-        main: '#000'
+        // Morning Birch
+        main: '#e8c4a9'
       },
       secondary: {
-        // main: '#F56900'
-        main: '#f50010'
+        // Alpine Clay
+        main: '#c29681'
       },
+      tertiary: {
+        // Misty Sage
+        main: '#b9af91'
+      },
+      quatrenary: {
+        // Evergreen Shadow
+        main: '#6d7969'
+      },
+      accent: {
+        // Wild Mustard
+        main: '#d7A958'
+      },
+
       background: {
         main: '#fff'
       }
